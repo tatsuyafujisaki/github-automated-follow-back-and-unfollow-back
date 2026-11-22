@@ -25,7 +25,7 @@ async function main() {
       `Found ${followers.size} followers and ${following.size} following.`,
     );
 
-    for (const follower of [...followers].filter(f => !following.has(f))) {
+    for (const follower of followers.difference(following)) {
       const response = await octokit.rest.users.follow({username: follower});
       if (response.status >= 200 && response.status < 300) {
         console.log(
@@ -34,7 +34,7 @@ async function main() {
       }
     }
 
-    for (const followedUser of [...following].filter(f => !followers.has(f))) {
+    for (const followedUser of following.difference(followers)) {
       const response = await octokit.rest.users.unfollow({
         username: followedUser,
       });
