@@ -1,11 +1,23 @@
 {
-  "extends": "./node_modules/gts/tsconfig-google.json",
+  "$schema": "https://www.schemastore.org/tsconfig",
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "build",
-    "target": "ESNext"
-  },
-  "include": [
-    "src/**/*.ts"
-  ]
+    "allowImportingTsExtensions": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "erasableSyntaxOnly": true,
+    "exactOptionalPropertyTypes": true,
+    "module": "preserve",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "types": [
+      "node"
+    ],
+    "verbatimModuleSyntax": true
+  }
 }

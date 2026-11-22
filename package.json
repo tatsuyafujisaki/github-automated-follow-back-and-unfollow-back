@@ -4,8 +4,7 @@
   },
   "devDependencies": {
     "@types/node": "latest",
-    "typescript": "latest",
-    "gts": "latest"
+    "typescript": "latest"
   },
   "private": true
 }
