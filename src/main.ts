@@ -1,6 +1,11 @@
 import { Octokit } from 'octokit';
 
-const octokit = new Octokit({ auth: process.env['GITHUB_TOKEN'] });
+const token = process.env['GH_TOKEN'];
+if (!token) {
+  throw new Error('GH_TOKEN environment variable is required.');
+}
+
+const octokit = new Octokit({ auth: token });
 
 const [{ data: user }, followerLogins, followingLogins] = await Promise.all([
   octokit.rest.users.getAuthenticated(),
